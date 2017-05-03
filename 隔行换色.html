@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" width="400px">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+</table>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    <!--向上方移动-->
+    $("tr").mouseover(function () {
+        $(this).css("background-color","red");
+        $(this).css("color","white");
+    });
+//    鼠标移开
+    $("tr").mouseout(function () {
+        $(this).css("background-color","white");
+        $(this).css("color","black");
+    })
+</script>
+</html>

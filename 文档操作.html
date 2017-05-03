@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>艺术家们</li>
+    </ul>
+    <br>
+    <input type="button" onclick="add();" value="向ul中添加一个li元素" />
+    <input type="button" onclick="del();" value="删除元素的内容" />
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function del() {
+        $("ul").empty();
+//      empty删除text
+//        $("ul").remove(); 删除元素
+    }
+    function add() {
+        var myli = $("<li>lll</li>");
+        $("ul").append(myli);
+//        向下
+        var myspan = $("<span>感谢日本艺术家们 alex</span>");
+        $("ul").before(myspan);
+//        向上一级
+    }
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  action="http://cn.bing.com/search/?" method="get" enctype="multipart/form-data">
+    用户名：<input type="text" name="q" desc="用户名"><br>
+    密码：<input type="password" desc="密码"><br>
+    年龄：<input type="text" desc="年龄"><br>
+    地址：<input type="text" desc="地址"><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(":submit").click(function () {
+        $(".error").remove();
+        var flag = true;
+        $("input[type='text'],input[type='password']").each(function () {
+            var v = $(this).val();
+            if(v.length <= 0){
+                flag = false;
+                var desc = $(this).attr('desc');
+                var content = desc +"必填";
+                $(this).after($("<span class='error'>" + content + "</span>"));
+            }
+        })
+        return false;
+//        控制submit的提交,控制click事件的发生
+    })
+</script>
+</html>
